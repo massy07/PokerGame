@@ -1,0 +1,18 @@
+.pg-contatore{     
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  .contatore-containerButton{
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contatore-button{
+      height: 100%;
+      width: 100%;
+    }  
+  }
+}
