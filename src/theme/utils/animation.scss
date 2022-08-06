@@ -1,0 +1,256 @@
+
+@import './variables.scss';
+
+//animation click answer
+
+@mixin blinkAnimation {
+    animation-iteration-count: 1;
+    animation-timing-function:  ease-in-out;
+    animation-duration: 0.8s;   
+    animation-name: blinkAnimationTiming; 
+}
+
+@keyframes blinkAnimationTiming { 
+    0% {  
+        box-shadow: $primary-color-light 0px 0px 0px 0.13rem inset;
+        background-color:$primary-color-lighter ;
+    } 
+    25% {   
+        box-shadow:$primary-color-lighter 0px 0px 0px 0.2rem inset;
+        background-color:$primary-color ;
+    } 
+    50% {  
+        box-shadow:$primary-color-light 0px 0px 0px 0.13rem inset;
+        background-color:$primary-color-lighter ;
+    }     
+    100% { 
+        box-shadow: $primary-color-lighter 0px 0px 0px 0.2rem inset;
+        background-color:$primary-color ;
+    }      
+}
+
+ 
+//  ELEMENT ANIMATION OPTION  
+@mixin optionModellingAnimation {
+    animation-iteration-count: 1;
+    animation-timing-function:  ease-in-out;
+    animation-duration: 1s;     
+}
+
+//
+//  MOVEMENT OF THE X  AXIS ELEMENT  LEFT <--> RIGHT
+//  variable window app       
+$maxWidth: 100% ;
+$minWidth: -100% ;
+$maxHeight: 100% ;
+$minHeight: -100% ;
+//
+//       X <-- (center Desktop) 
+@keyframes slideCenterToLeft{ 
+    from {left: 0rem;
+        position: relative;
+    }
+    to {left: $minWidth;
+        position: relative;
+    }
+}
+//             (center Desktop) <-- X 
+@keyframes slideRightToCenter { 
+    from {left: $maxWidth;
+        position: relative;
+    }
+    to {left: 0rem;
+        position: relative;
+    }
+}
+//       X --> (center Desktop)  
+@keyframes slideLeftToCenter { 
+    from {left: $minWidth;
+        position: relative;
+    }
+    to {left: 0rem;
+        position: relative;
+    }
+} 
+//             (center Desktop) --> X
+@keyframes slideCenterToRight { 
+    from {left: 0rem;
+        position: relative;
+    }
+    to {left: $maxWidth;
+        position: relative;
+    }
+}
+//
+//       MOVEMENT OF THE   AXIS ELEMENT      TOP
+//                                            |
+//                                          BOTTOM 
+//                                        
+//        (center Desktop) 
+//              \/ 
+//              \/
+//              X
+@keyframes slideCenterToBottom { 
+    from { 
+        bottom: 0rem;
+        position: relative;
+    }
+    to {  
+        bottom: $minHeight ;
+        position: relative;
+    }
+}
+//              X
+//              \/ 
+//              \/
+//        (center Desktop) 
+@keyframes slideTopToCenter { 
+    from {  
+        bottom: $maxHeight ;
+        position: relative;
+    }
+    to {  
+        bottom: 0rem;
+        position: relative;
+    }
+}
+//        (center Desktop) 
+//              /\ 
+//              /\
+//              X
+@keyframes slideBottomToCenter { 
+    from { 
+        bottom: $minHeight ;
+        position: relative;
+    }
+    to { 
+        bottom: 0rem;
+        position: relative;
+    }
+}
+//              X
+//              /\ 
+//              /\
+//        (center Desktop) 
+@keyframes slideCenterToTop { 
+    from { 
+        bottom: 0rem;
+        position: relative;
+    }
+    to { 
+        bottom:  $maxHeight ;
+        position: relative;
+    }
+}
+//IMAGE APPEAR & DISSOLVING
+@keyframes fadeOut {  
+    from { 
+        opacity: 0.9; 
+    }
+    to {
+        opacity: 0; 
+    }
+} 
+
+@keyframes fadeIn{   
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 0.9; 
+    }
+}
+//         
+//  ELEMENT ANIMATION OPTION  OPTION
+//                                                
+@mixin optionOpacityModellingAnimation {
+    animation-iteration-count: 1;
+    animation-timing-function:  ease-in-out;
+    animation-duration: 0.9s;     
+}
+//
+//       MOVEMENT OF THE   AXIS ELEMENT WHIT OPACITY   TOP
+//                                                      |
+//                                                    BOTTOM  
+//        (center Desktop) 
+//              \/ 
+//              \/
+//              X
+@keyframes slideOpacityCenterToBottom { 
+    0% { 
+        opacity: 1; 
+        bottom: 0% ;
+        position: relative;
+    }
+    20% { 
+        opacity: 0;  
+        position: relative;
+    }
+    100% {
+        opacity: 0; 
+        bottom:   $minHeight ;
+        position: relative;
+    } 
+}
+//              X
+//              \/ 
+//              \/
+//        (center Desktop) 
+@keyframes slideOpacityTopToCenter { 
+    0% { 
+        opacity: 0; 
+        bottom: $maxHeight ;
+        position: relative;
+    }
+    80% { 
+        opacity: 0;  
+        position: relative;
+    }
+    100% {
+        opacity: 1; 
+        bottom:  0% ;
+        position: relative;
+    } 
+  
+}
+//        (center Desktop) 
+//              /\ 
+//              /\
+//              X
+@keyframes slideOpacityBottomToCenter { 
+    0% { 
+        opacity: 0; 
+        bottom: $minHeight;
+        position: relative;
+      }
+    80% { 
+        opacity: 0;  
+        position: relative;
+    }
+    100% {
+        opacity: 1; 
+        bottom:  0% ;
+        position: relative;
+    } 
+    
+}
+//              X
+//              /\ 
+//              /\
+//        (center Desktop) 
+@keyframes slideOpacityCenterToTop {  
+  0% { 
+        opacity: 1; 
+        bottom: 0%;
+        position: relative;
+    }
+  20% { 
+    opacity: 0;  
+    position: relative;
+  }
+  100% {
+    opacity: 0; 
+    bottom:  $maxHeight ;
+    position: relative;
+  } 
+}

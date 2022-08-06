@@ -20,7 +20,7 @@ const Homepage: React.FC<HomepageProps> = () => {
   return (
     <div className='pg-homepage'>  
       <h1>HOMEPAGE</h1>
-      <button onClick={()=>handleButtonClick('/contatore')}>CONTATORE</button>
+      <button onClick={()=>handleButtonClick('/counter-cards')}>COUNTER</button>
       <button onClick={()=>handleButtonClick('/quiz')}>QUIZ</button>
       <button onClick={()=>handleButtonClick('/play-strategy')}>STRATEGY</button>
     </div>

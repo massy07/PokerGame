@@ -1,4 +1,4 @@
-import { getRandomInt } from "../../store/mazzi";
+import { getRandomInt } from "../../store/reducer/decksStore";
 
 export interface ArrayBoxState { 
   id:string,

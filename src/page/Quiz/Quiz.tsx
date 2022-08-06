@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';   
-import { ImageView } from '../../components/imageView';
-import { getRandomInt } from '../../store/mazzi';
+import { ImageView } from '../../components/ImageView';
+import { getRandomInt } from '../../store/reducer/decksStore';
 import { mixPrizeArray } from './utils'; 
 import { useNavigate } from 'react-router';
 

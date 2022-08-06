@@ -1,0 +1,41 @@
+//color button answer
+$primary-color: #468894;
+$primary-color-light: #cee0e4;
+$primary-color-lighter: #ebf2f5;
+$button-hover-color: lighten($primary-color, 10);
+$color-text-disabled: #989898;  
+
+//color label for horizontal button
+$color-horizontal-Label: #000000;
+
+//color button of movment and select
+$secondary-color: #468894;
+$secondary-color-light: transparentize($secondary-color, 0.5);
+$secondary-color-text: #ffffff;
+
+$color-secondari-white: #ffffff; 
+
+//color background and text of app fonnt size
+$color-desk: #ffffff; 
+
+//color error
+$color-error: #f44336;
+
+$default-text-color: #304a40; 
+$default-subtext-color: #468894; 
+$default-extrainfo-color: #468894; 
+$color-text-disabled: #989898; 
+
+//tecma option
+$color-text-tecma: #000000;    
+$default-font: Arial, sans-serif;
+
+$extralarge-font-size: 3.5rem;
+$large-font-size: 1.5rem;
+$medium-font-size: 1.25rem;
+$small-font-size: 1rem;
+$extrasmall-font-size: 0.875rem;
+
+//width of start responsive adgiustamen  
+$tablet-width:47.5rem; // 760px
+$desktop-width: 64rem ; //1024px 
