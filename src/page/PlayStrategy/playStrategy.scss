@@ -1,8 +1,28 @@
 
 .pg-playStrategy{    
   height: 100%;
-  width: 100%;
-  .container-index{
-
+  width: 100%; 
+  color: #ffffff;
+  .container-index{ 
+    color: #ffffff;
+  } 
+  .playStrategy-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 85%;
+    .box-game{
+      width: 40%;
+      .next-hand-game{
+        &.hide{ 
+          visibility: hidden;
+        }
+        &.show{ 
+          visibility: unset;
+        }
+      }
+    }
   }
+
 }

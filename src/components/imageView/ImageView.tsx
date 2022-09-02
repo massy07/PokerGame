@@ -12,12 +12,12 @@ interface ImageViewProps {
 
 const ImageView: React.FC<ImageViewProps> = ({ imageCard, nameCard,className }) => {   
 
-  const classList =  'pg-imageView '+ className  
+  const classList =  'imageView '+ className  
 
   return (
     <>
-      <div className='pg-imageView' >   
-        <img src={'./image/'+imageCard} alt={nameCard}  className={classList}/>
+      <div className={classList}>   
+        <img src={'./image/'+imageCard} alt={nameCard} className='image-show'/>
       </div>
     </>
   );

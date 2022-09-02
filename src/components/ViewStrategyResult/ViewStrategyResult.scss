@@ -1,0 +1,15 @@
+.viewStrategyResult{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+  .result-game{
+    &.hide{ 
+      visibility: hidden;
+    }
+    &.show{ 
+      visibility: unset;
+    }
+  }
+}

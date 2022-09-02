@@ -1,4 +1,5 @@
-import { getRandomInt } from "../../store/reducer/decksStore";
+
+import { getRandomInt } from '../../store/utils/utils';
 
 export interface ArrayBoxState { 
   id:string,

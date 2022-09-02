@@ -17,13 +17,6 @@
         "index":"src/theme/templates/index.ts",
         "style":"src/theme/templates/TemplateName.scss"
       }
-    },
-    "page": {
-      "path": "src/page",
-      "withStyle": true,
-      "withTest": true,
-      "withStory": true,
-      "withLazy": true
     }
   }
 }

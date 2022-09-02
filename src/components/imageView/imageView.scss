@@ -1,7 +1,25 @@
-.pg-imageView{
+.imageView{
   height: 23rem;
   width: 15rem;
   display: flex;
   justify-content: center;
   align-items: center; 
+  &.small{
+    height: 13rem;
+    width: 9rem;
+    .image-show{    
+      height: 13rem;
+      width: 9rem;
+    }
+  } 
+  .image-show{    
+    height: 9rem;
+    width: 9rem;
+  }
+  &.strategy-image{
+    .image-show{ 
+      height: 40rem;
+      width: 34rem;
+    }
+  }
 }    

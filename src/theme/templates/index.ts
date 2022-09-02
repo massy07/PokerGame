@@ -1,1 +1,1 @@
-import { default as TemplateName } from "./TemplateName";
+export { default as TemplateName } from "./TemplateName";

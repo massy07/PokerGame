@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';   
 import { ImageView } from '../../components/ImageView';
-import { getRandomInt } from '../../store/reducer/decksStore';
+import { getRandomInt } from '../../store/utils/utils';
 import { mixPrizeArray } from './utils'; 
 import { useNavigate } from 'react-router';
 
@@ -21,7 +21,7 @@ const Quiz: React.FC<QuizProps> = () => {
   const [ finalResult, setFinalResult ] = useState<string>( 'gioca' ) 
 
   const imagePrize = [ {name:'capra', image:'quiz/capra.png'},{name:'auto', image:'quiz/auto.png',} ]
-
+ 
   const creationPrize = () => { 
     setShowPrizeArray(selectResult('start'))
     setPrizeArray( mixPrizeArray() ) 

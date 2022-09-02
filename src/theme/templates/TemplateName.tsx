@@ -5,10 +5,17 @@ import './TemplateName.scss';
 
 interface TemplateNameProps {}
 
-const TemplateName: FC<TemplateNameProps> = () => (
-  <div className="templateName" data-testid="templateName">
-    TemplateName Component
-  </div>
-);
+const TemplateName: FC<TemplateNameProps> = () => { 
+
+  console.log('TemplateName');
+
+  return (
+    <>   
+      <div className="templateName" data-testid="templateName">
+        TemplateName Component
+      </div>
+    </>
+  );
+};
 
 export default React.memo(TemplateName); 

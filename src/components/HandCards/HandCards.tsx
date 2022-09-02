@@ -1,19 +1,32 @@
 import React  from 'react';     
-import { CardView } from '../CardView';
+import { cardState } from '../../store/entities/deck';
+import { ImageView } from '../ImageView'; 
 
 // styles
 import './handCards.scss';
 
 interface HandsCardsProps {  
+  cardHand:Array<cardState>;
+  className?:string
  } 
-const HandCards: React.FC<HandsCardsProps> = (  ) => { 
+const HandCards: React.FC<HandsCardsProps> = ( { cardHand, className} ) => { 
+
   
 
   return (
     <>
-      <div className='pg-HandCards'>  
-        <div className='handCards-first-round' >
-          <CardView imageCard={''} nameCard={''}/>
+      <div className='handCards'>  
+        <div className='firs-hand-box'>   
+          { cardHand.map( (item,index) => index < 2 && 
+              <ImageView imageCard={item.image} nameCard={item.name} className={'small'}/>
+            )
+          }
+        </div>
+        <div className='second-hand-box'>  
+          { cardHand.map( (item,index) => index > 2 && 
+              <ImageView imageCard={item.image} nameCard={item.name} className={'small'}/>
+            )
+          }
         </div>
       </div>
     </>
@@ -24,20 +37,3 @@ const HandCards: React.FC<HandsCardsProps> = (  ) => {
 export default React.memo(HandCards);
 
 
-
-/*
-
-  { 
-    semi: 'diamonds', 
-    name: 'two',
-    value: 1 ,
-    image:''
-  },
-  { 
-    semi: 'diamonds', 
-    name: 'three',
-    value: 1,
-    image:'cards/3_quadri.svg'
-  },
-
-  */

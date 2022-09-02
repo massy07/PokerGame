@@ -1,1 +1,1 @@
-import { default as TelevisionQuiz } from "./TelevisionQuiz";
+export { default as TelevisionQuiz } from "./TelevisionQuiz";

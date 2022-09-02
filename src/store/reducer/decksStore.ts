@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { deck, cardState } from "../entities/deck";
 
-const decks:Array<cardState>=[]
+
+export const decks:Array<cardState>=[]
 
 const decksStoreSlice = createSlice({
   name:'decks',
@@ -12,7 +13,7 @@ const decksStoreSlice = createSlice({
       state=[]
       for( let i:number=0; i<6; i++){
         state.push( ...deck ) 
-      } 
+      }  
       return state;
     },
     setNumberDecks:(state, action:PayloadAction<number> ) => {
@@ -23,16 +24,13 @@ const decksStoreSlice = createSlice({
       return state;
     }, 
     deleteCard:(state, action:PayloadAction<number> ) => {
-      let newDeck = [...state]
-      newDeck.splice( action.payload , 1 )
+      let newDeck = [...state]  
+      newDeck.splice( action.payload , 1 ) 
       return newDeck
-     }, 
+     }
   }
 })
 
-export const getRandomInt = (max:number) => {
-  return Math.floor(Math.random() * max);
-}
 
 export const { setViewState, setNewDecks, deleteCard } = decksStoreSlice.actions 
 
