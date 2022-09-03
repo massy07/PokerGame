@@ -23,6 +23,7 @@ const PlayStrategy: React.FC<PlayStrategyProps> = () => {
   const decks = useSelector<rootState,Array<cardState>>(  state  => state.decks  ) ;  
   const playerTable = useSelector<rootState,Array<handCardsPlayerState>>(  state  => state.handsPlayers  ) ;
   const [ strategyShow, setStrategyShow ] = useState(false)  
+  const [ showHelp, setShowHelp ] = useState(true)  
   const [ resultStrategy, setResultStrategy  ] = useState<string[]>([])
 
  
@@ -63,7 +64,10 @@ const PlayStrategy: React.FC<PlayStrategyProps> = () => {
     <div className='pg-playStrategy'>     
       <TitlePage title='PlayStrategy' />
         <div className='playStrategy-container'>
-          <ImageView imageCard={'strategy.png'} nameCard={'strategy.png'} className={'strategy-image'} />
+          <div className='box-help'> 
+            <button onClick={()=>setShowHelp(!showHelp)}>Show Help</button>
+            { showHelp  && <ImageView imageCard={'strategy.png'} nameCard={'strategy.png'} className={'strategy-image'} />}
+          </div>
           <div className='box-game'> 
           {!strategyShow && <TableDistribution playerTable={playerTable} /> }
           { strategyShow && <button className='cardDistribution' onClick={cardDistribution} >take card</button>} 
