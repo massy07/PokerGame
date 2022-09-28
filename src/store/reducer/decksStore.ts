@@ -17,21 +17,26 @@ const decksStoreSlice = createSlice({
       return state;
     },
     setNumberDecks:(state, action:PayloadAction<number> ) => {
-      state=[]
+      let newDeck:Array<cardState>=[]
       for( let i:number=0; i<action.payload; i++){
-        state.push( ...deck )
+        newDeck.push( ...deck )
       }
-      return state;
+      return newDeck;
     }, 
     deleteCard:(state, action:PayloadAction<number> ) => {
       let newDeck = [...state]  
       newDeck.splice( action.payload , 1 ) 
       return newDeck
-     }
+     },
+    setResetCard:( state ) => {
+      let newDeck:Array<cardState>=[]
+      state = newDeck
+      return state;
+    }
   }
 })
 
 
-export const { setViewState, setNewDecks, deleteCard } = decksStoreSlice.actions 
+export const { setViewState, setNewDecks, deleteCard, setResetCard } = decksStoreSlice.actions 
 
 export default decksStoreSlice.reducer

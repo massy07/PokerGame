@@ -1,0 +1,35 @@
+@import '../../theme/utils/variables.scss';
+
+#floatingContent{
+  position: absolute;
+  top: 0%; 
+  display: flex;
+  justify-content: center;
+} 
+
+ 
+  .floatingContent.strategy-image{
+    position: absolute;
+    top: 0%; 
+    display: flex;
+    justify-content: center;
+    .imageView.strategy-image{    
+      height: 100vh;
+      width: 100vw;
+      .image-show{
+        height: 50rem;
+        width: 44rem;
+      }
+    }
+  } 
+
+@media only screen and (max-width:$tablet-width) {  
+  .floatingContent.strategy-image{ 
+    .imageView.strategy-image{     
+      .image-show{
+        height: 40rem;
+        width: 20rem;
+      }
+    }
+  } 
+}

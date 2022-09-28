@@ -5,14 +5,17 @@ import './counter.scss';
 
 interface CounterProps {
   valueCard:number,
-  nextCard:number
+  newDeck:boolean,
+  deckCards:number,
 }
 
-const Counter: FC<CounterProps> = ({ valueCard, nextCard }) => {
+const Counter: FC<CounterProps> = ({ valueCard, deckCards, newDeck }) => {
 
   const [ counter, setCounter ] = useState(0);
+
+  useEffect( () =>{ if(newDeck){setCounter(0)} }, [newDeck] ); 
   
-  useEffect( () => setCounter( counter => counter + valueCard ), [valueCard, nextCard] );
+  useEffect( () => setCounter( counter => counter + valueCard ), [valueCard, deckCards] );
 
   return(
     <>

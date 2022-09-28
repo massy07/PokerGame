@@ -1,0 +1,11 @@
+@import '../../theme/utils/variables.scss';
+
+.tps-driftBlock{
+  height: 140%;
+  width: 100%; 
+  background-repeat: no-repeat;    
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

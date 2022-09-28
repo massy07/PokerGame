@@ -14,6 +14,7 @@ import { Strategy } from '../../components/Strategy';
 import './playStrategy.scss';
 import { ViewStrategyResult } from '../../components/ViewStrategyResult';
 import { ImageView } from '../../components/ImageView';
+import { FloatingContent } from '../../components/FloatingContent';
 
 interface PlayStrategyProps {  }
  
@@ -23,7 +24,7 @@ const PlayStrategy: React.FC<PlayStrategyProps> = () => {
   const decks = useSelector<rootState,Array<cardState>>(  state  => state.decks  ) ;  
   const playerTable = useSelector<rootState,Array<handCardsPlayerState>>(  state  => state.handsPlayers  ) ;
   const [ strategyShow, setStrategyShow ] = useState(false)  
-  const [ showHelp, setShowHelp ] = useState(true)  
+  const [ showHelp, setShowHelp ] = useState(false)  
   const [ resultStrategy, setResultStrategy  ] = useState<string[]>([])
 
  
@@ -57,6 +58,12 @@ const PlayStrategy: React.FC<PlayStrategyProps> = () => {
   const viewResult = ( selectResult:Array<string> ) => {
     setResultStrategy(selectResult) 
   }
+
+
+  const viewHelp = () => {
+    console.log('eccomi')
+    setShowHelp(!showHelp)
+  } 
   
 
  
@@ -64,10 +71,8 @@ const PlayStrategy: React.FC<PlayStrategyProps> = () => {
     <div className='pg-playStrategy'>     
       <TitlePage title='PlayStrategy' />
         <div className='playStrategy-container'>
-          <div className='box-help'> 
-            <button onClick={()=>setShowHelp(!showHelp)}>Show Help</button>
-            { showHelp  && <ImageView imageCard={'strategy.png'} nameCard={'strategy.png'} className={'strategy-image'} />}
-          </div>
+
+
           <div className='box-game'> 
           {!strategyShow && <TableDistribution playerTable={playerTable} /> }
           { strategyShow && <button className='cardDistribution' onClick={cardDistribution} >take card</button>} 
@@ -79,8 +84,12 @@ const PlayStrategy: React.FC<PlayStrategyProps> = () => {
           { (decks.length<=0 && !strategyShow ) && <button onClick={startGame}>Start Game</button>   }
             <ViewStrategyResult resultStrategy={resultStrategy} /> 
             <button className={ 'next-hand-game' + (resultStrategy.length>0 ?' show':' hide'  ) } onClick={nextHands} > NEXT HANDS </button>
+            <button onClick={()=>setShowHelp(!showHelp)}>Show Help</button>
           </div> 
         </div>
+        <FloatingContent isShow={showHelp} onToggle={()=>setShowHelp(!showHelp)} className="strategy-image" >
+          <ImageView imageCard={'strategy.png'} nameCard={'strategy.png'} className={'strategy-image'} onClick={viewHelp} />
+        </FloatingContent> 
     </div>
   );
 };

@@ -19,10 +19,11 @@ const CounterCards: React.FC<CounterCardsProps> = () => {
 
   const dispatch = useDispatch();
 
-  const [ card, setCard ] = useState<cardState>( {name:'start', valueCounter:0, valueCard:0, image:'cards/start.svg'}) ; 
+  const [ card, setCard ] = useState<cardState>( {name:'start', valueCounter:0, valueCard:0, number:0,image:'cards/start.svg'}) ; 
   const decks = useSelector<rootState,Array<cardState>>(  state  => state.decks  ) ;
 
   const creationDeck = () => {
+    setCard( {name:'start', valueCounter:0, number:0, valueCard:0, image:'cards/start.svg'} )
     dispatch(setNewDecks()) 
   }
   
@@ -43,7 +44,7 @@ const CounterCards: React.FC<CounterCardsProps> = () => {
       <h1>{ decks.length }</h1>
       {decks.length > 0 &&  
         <div className='counter-container'  >
-          <Counter valueCard={card.valueCounter} nextCard={decks.length}  />
+          <Counter valueCard={card.valueCounter} deckCards={decks.length} newDeck={card.number===0} />
           <button className='removeCard' onClick={removeCard} >remove card</button>
         </div> 
       } 

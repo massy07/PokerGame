@@ -1,0 +1,98 @@
+@import '../../theme/utils/variables.scss';
+
+.tps-btn {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background-color: $primaryColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0.5rem 1rem;
+  line-height: 1.25;
+  font-size: 1rem;
+  border-radius: 0.125rem;
+  text-transform: capitalize;
+  cursor: pointer; 
+  &:hover {
+    background-color: $primaryColorDark;
+    box-shadow: 3px 3px 12px 2px rgba(229, 230, 237, 0.4);
+    &.btn-outlined {
+      background-color: $defaultColor;
+    }
+    &.btn-disabled,
+    &.btn-transparent {
+      background-color: unset;
+      box-shadow: none;
+    }
+  }
+  &:active {
+    background-color: $primaryColor;
+    &.btn-transparent {
+      background-color: transparent;
+    }
+  }
+  &.btn-rounded {
+    border-radius: 9999px;
+  }
+  &.btn-icon-only {
+    height: 2.5rem;
+    min-width: 2.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    .tps-icon {
+      margin-right: unset;
+    }
+    &.btn-small {
+      width: 1.625rem;
+      height: 1.625rem;
+    }
+
+    &.btn-large {
+      width: 2.875rem;
+      height: 2.875rem;
+    }
+  }
+  &.btn-fluid {
+    width: 100%;
+  }
+
+  &.btn-transparent {
+    background-color: transparent;
+    flex-direction: column;
+    &:after {
+      content: '';
+      width: 0px;
+      height: 0.06rem;
+      display: block;
+      background: white;
+      transition: 300ms;
+      align-self: flex-start;
+    }
+    &:hover:after {
+      width: 100%;
+    }
+  }
+  //-----------
+  // SIZES
+  //-----------
+  &.btn-small {
+    padding: 0rem 2rem;
+    height: 2.5rem;
+  }
+  &.btn-large {
+    text-transform: uppercase;
+    padding: 0 2.5rem;
+    height: 3rem;
+  }
+  &.btn-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  &.btn-outlined {
+    color: $black;
+    background-color: unset;
+    border: 1px solid $black;
+  }
+}

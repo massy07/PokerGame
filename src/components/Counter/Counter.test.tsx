@@ -6,7 +6,7 @@ import Counter from './Counter';
 describe('<Counter />', () => {
   test('it should mount', () => {
     
-    render(<Counter valueCard={1} nextCard={0} />);
+    render(<Counter valueCard={1} newDeck={false} deckCards={0} />);
     
     const counter = screen.getByTestId('Counter');
 
